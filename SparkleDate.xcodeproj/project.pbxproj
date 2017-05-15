@@ -13,6 +13,27 @@
 		B68787161EC90306001707B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68787151EC90306001707B1 /* Assets.xcassets */; };
 		B68787191EC90306001707B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68787171EC90306001707B1 /* LaunchScreen.storyboard */; };
 		B68787241EC90306001707B1 /* SparkleDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787231EC90306001707B1 /* SparkleDateTests.swift */; };
+		B68787341ECA2F77001707B1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787331ECA2F77001707B1 /* RxSwift.framework */; };
+		B68787361ECA2F7C001707B1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787351ECA2F7C001707B1 /* RxCocoa.framework */; };
+		B68787381ECA2F86001707B1 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787371ECA2F86001707B1 /* RxDataSources.framework */; };
+		B687873A1ECA2F94001707B1 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787391ECA2F94001707B1 /* Action.framework */; };
+		B687873C1ECA2FA0001707B1 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B687873B1ECA2FA0001707B1 /* NSObject_Rx.framework */; };
+		B687873E1ECA2FA8001707B1 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B687873D1ECA2FA8001707B1 /* Unbox.framework */; };
+		B68787461ECA330C001707B1 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787451ECA330C001707B1 /* Scene.swift */; };
+		B68787481ECA332E001707B1 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787471ECA332E001707B1 /* SceneCoordinatorType.swift */; };
+		B687874A1ECA3376001707B1 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787491ECA3376001707B1 /* SceneCoordinator.swift */; };
+		B687874C1ECA338B001707B1 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687874B1ECA338B001707B1 /* Scene+ViewController.swift */; };
+		B687874E1ECA339D001707B1 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687874D1ECA339D001707B1 /* SceneTransitionType.swift */; };
+		B68787501ECA347F001707B1 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687874F1ECA347F001707B1 /* TaskViewModel.swift */; };
+		B68787521ECA3492001707B1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787511ECA3492001707B1 /* TaskViewController.swift */; };
+		B68787541ECA34AA001707B1 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787531ECA34AA001707B1 /* EditTaskViewModel.swift */; };
+		B68787561ECA34BB001707B1 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787551ECA34BB001707B1 /* EditTaskViewController.swift */; };
+		B68787581ECA3579001707B1 /* TaskServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787571ECA3579001707B1 /* TaskServiceType.swift */; };
+		B687875A1ECA3586001707B1 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787591ECA3586001707B1 /* TaskService.swift */; };
+		B687875E1ECA3644001707B1 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687875D1ECA3644001707B1 /* UINavigationController+Rx.swift */; };
+		B68787601ECA369D001707B1 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687875F1ECA369D001707B1 /* TaskItem.swift */; };
+		B68787621ECA36C1001707B1 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787611ECA36C1001707B1 /* BindableType.swift */; };
+		B68787641ECA373D001707B1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787631ECA373D001707B1 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +57,27 @@
 		B687871F1EC90306001707B1 /* SparkleDateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkleDateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68787231EC90306001707B1 /* SparkleDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleDateTests.swift; sourceTree = "<group>"; };
 		B68787251EC90306001707B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68787331ECA2F77001707B1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		B68787351ECA2F7C001707B1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		B68787371ECA2F86001707B1 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		B68787391ECA2F94001707B1 /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
+		B687873B1ECA2FA0001707B1 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		B687873D1ECA2FA8001707B1 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		B68787451ECA330C001707B1 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		B68787471ECA332E001707B1 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		B68787491ECA3376001707B1 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		B687874B1ECA338B001707B1 /* Scene+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
+		B687874D1ECA339D001707B1 /* SceneTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		B687874F1ECA347F001707B1 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		B68787511ECA3492001707B1 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		B68787531ECA34AA001707B1 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
+		B68787551ECA34BB001707B1 /* EditTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		B68787571ECA3579001707B1 /* TaskServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskServiceType.swift; sourceTree = "<group>"; };
+		B68787591ECA3586001707B1 /* TaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		B687875D1ECA3644001707B1 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
+		B687875F1ECA369D001707B1 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		B68787611ECA36C1001707B1 /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		B68787631ECA373D001707B1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68787341ECA2F77001707B1 /* RxSwift.framework in Frameworks */,
+				B68787361ECA2F7C001707B1 /* RxCocoa.framework in Frameworks */,
+				B68787381ECA2F86001707B1 /* RxDataSources.framework in Frameworks */,
+				B687873A1ECA2F94001707B1 /* Action.framework in Frameworks */,
+				B687873C1ECA2FA0001707B1 /* NSObject_Rx.framework in Frameworks */,
+				B687873E1ECA2FA8001707B1 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +110,7 @@
 				B687870D1EC90306001707B1 /* SparkleDate */,
 				B68787221EC90306001707B1 /* SparkleDateTests */,
 				B687870C1EC90306001707B1 /* Products */,
+				B68787321ECA2F76001707B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +127,14 @@
 			isa = PBXGroup;
 			children = (
 				B687870E1EC90306001707B1 /* AppDelegate.swift */,
-				B68787101EC90306001707B1 /* ViewController.swift */,
-				B68787121EC90306001707B1 /* Main.storyboard */,
+				B68787421ECA3191001707B1 /* Scenes */,
+				B68787411ECA316D001707B1 /* Services */,
+				B68787431ECA3198001707B1 /* Extensions */,
+				B687873F1ECA315F001707B1 /* Model */,
+				B68787401ECA3166001707B1 /* Controllers */,
+				B68787441ECA31A1001707B1 /* Cells */,
 				B68787151EC90306001707B1 /* Assets.xcassets */,
+				B68787121EC90306001707B1 /* Main.storyboard */,
 				B68787171EC90306001707B1 /* LaunchScreen.storyboard */,
 				B687871A1EC90306001707B1 /* Info.plist */,
 			);
@@ -96,6 +150,77 @@
 			path = SparkleDateTests;
 			sourceTree = "<group>";
 		};
+		B68787321ECA2F76001707B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B687873D1ECA2FA8001707B1 /* Unbox.framework */,
+				B687873B1ECA2FA0001707B1 /* NSObject_Rx.framework */,
+				B68787391ECA2F94001707B1 /* Action.framework */,
+				B68787371ECA2F86001707B1 /* RxDataSources.framework */,
+				B68787351ECA2F7C001707B1 /* RxCocoa.framework */,
+				B68787331ECA2F77001707B1 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B687873F1ECA315F001707B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B687875F1ECA369D001707B1 /* TaskItem.swift */,
+				B68787611ECA36C1001707B1 /* BindableType.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B68787401ECA3166001707B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B68787101EC90306001707B1 /* ViewController.swift */,
+				B687874F1ECA347F001707B1 /* TaskViewModel.swift */,
+				B68787511ECA3492001707B1 /* TaskViewController.swift */,
+				B68787531ECA34AA001707B1 /* EditTaskViewModel.swift */,
+				B68787551ECA34BB001707B1 /* EditTaskViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B68787411ECA316D001707B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B68787571ECA3579001707B1 /* TaskServiceType.swift */,
+				B68787591ECA3586001707B1 /* TaskService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B68787421ECA3191001707B1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B68787451ECA330C001707B1 /* Scene.swift */,
+				B68787471ECA332E001707B1 /* SceneCoordinatorType.swift */,
+				B68787491ECA3376001707B1 /* SceneCoordinator.swift */,
+				B687874B1ECA338B001707B1 /* Scene+ViewController.swift */,
+				B687874D1ECA339D001707B1 /* SceneTransitionType.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		B68787431ECA3198001707B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B687875D1ECA3644001707B1 /* UINavigationController+Rx.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		B68787441ECA31A1001707B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B68787631ECA373D001707B1 /* TaskTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +231,7 @@
 				B68787071EC90306001707B1 /* Sources */,
 				B68787081EC90306001707B1 /* Frameworks */,
 				B68787091EC90306001707B1 /* Resources */,
+				B687872E1ECA2EC5001707B1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,13 +322,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B687872E1ECA2EC5001707B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B68787071EC90306001707B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68787621ECA36C1001707B1 /* BindableType.swift in Sources */,
+				B68787561ECA34BB001707B1 /* EditTaskViewController.swift in Sources */,
+				B68787601ECA369D001707B1 /* TaskItem.swift in Sources */,
 				B68787111EC90306001707B1 /* ViewController.swift in Sources */,
+				B68787541ECA34AA001707B1 /* EditTaskViewModel.swift in Sources */,
+				B687874E1ECA339D001707B1 /* SceneTransitionType.swift in Sources */,
+				B687874A1ECA3376001707B1 /* SceneCoordinator.swift in Sources */,
+				B68787481ECA332E001707B1 /* SceneCoordinatorType.swift in Sources */,
+				B687875A1ECA3586001707B1 /* TaskService.swift in Sources */,
+				B68787581ECA3579001707B1 /* TaskServiceType.swift in Sources */,
+				B687874C1ECA338B001707B1 /* Scene+ViewController.swift in Sources */,
+				B68787641ECA373D001707B1 /* TaskTableViewCell.swift in Sources */,
+				B68787501ECA347F001707B1 /* TaskViewModel.swift in Sources */,
 				B687870F1EC90306001707B1 /* AppDelegate.swift in Sources */,
+				B687875E1ECA3644001707B1 /* UINavigationController+Rx.swift in Sources */,
+				B68787461ECA330C001707B1 /* Scene.swift in Sources */,
+				B68787521ECA3492001707B1 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +505,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KB6JM4JCUF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SparkleDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprysprite.SparkleDate;
@@ -355,6 +522,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KB6JM4JCUF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SparkleDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprysprite.SparkleDate;
@@ -412,6 +583,7 @@
 				B687872A1EC90306001707B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B687872B1EC90306001707B1 /* Build configuration list for PBXNativeTarget "SparkleDateTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +592,7 @@
 				B687872D1EC90306001707B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

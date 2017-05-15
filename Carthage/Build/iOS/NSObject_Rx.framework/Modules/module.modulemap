@@ -1,0 +1,10 @@
+framework module NSObject_Rx {
+  umbrella header "NSObject_Rx.h"
+
+  export *
+  module * { export * }
+}
+
+module NSObject_Rx.Swift {
+    header "NSObject_Rx-Swift.h"
+}
