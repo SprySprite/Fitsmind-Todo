@@ -13,8 +13,6 @@
 		B68787161EC90306001707B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68787151EC90306001707B1 /* Assets.xcassets */; };
 		B68787191EC90306001707B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68787171EC90306001707B1 /* LaunchScreen.storyboard */; };
 		B68787241EC90306001707B1 /* SparkleDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787231EC90306001707B1 /* SparkleDateTests.swift */; };
-		B68787341ECA2F77001707B1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787331ECA2F77001707B1 /* RxSwift.framework */; };
-		B68787361ECA2F7C001707B1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787351ECA2F7C001707B1 /* RxCocoa.framework */; };
 		B68787381ECA2F86001707B1 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787371ECA2F86001707B1 /* RxDataSources.framework */; };
 		B687873A1ECA2F94001707B1 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787391ECA2F94001707B1 /* Action.framework */; };
 		B687873C1ECA2FA0001707B1 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B687873B1ECA2FA0001707B1 /* NSObject_Rx.framework */; };
@@ -34,6 +32,11 @@
 		B68787601ECA369D001707B1 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687875F1ECA369D001707B1 /* TaskItem.swift */; };
 		B68787621ECA36C1001707B1 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787611ECA36C1001707B1 /* BindableType.swift */; };
 		B68787641ECA373D001707B1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787631ECA373D001707B1 /* TaskTableViewCell.swift */; };
+		B68787701ECA45ED001707B1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787651ECA3E6B001707B1 /* Realm.framework */; };
+		B68787711ECA45F7001707B1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787671ECA3E70001707B1 /* RealmSwift.framework */; };
+		B68787721ECA4930001707B1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787331ECA2F77001707B1 /* RxSwift.framework */; };
+		B68787731ECA4939001707B1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787351ECA2F7C001707B1 /* RxCocoa.framework */; };
+		B68787751ECA4A33001707B1 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787741ECA4A33001707B1 /* RxRealm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		B687875F1ECA369D001707B1 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		B68787611ECA36C1001707B1 /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		B68787631ECA373D001707B1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		B68787651ECA3E6B001707B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		B68787671ECA3E70001707B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		B68787741ECA4A33001707B1 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +91,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68787341ECA2F77001707B1 /* RxSwift.framework in Frameworks */,
-				B68787361ECA2F7C001707B1 /* RxCocoa.framework in Frameworks */,
+				B68787721ECA4930001707B1 /* RxSwift.framework in Frameworks */,
+				B68787731ECA4939001707B1 /* RxCocoa.framework in Frameworks */,
 				B68787381ECA2F86001707B1 /* RxDataSources.framework in Frameworks */,
 				B687873A1ECA2F94001707B1 /* Action.framework in Frameworks */,
 				B687873C1ECA2FA0001707B1 /* NSObject_Rx.framework in Frameworks */,
+				B68787701ECA45ED001707B1 /* Realm.framework in Frameworks */,
+				B68787711ECA45F7001707B1 /* RealmSwift.framework in Frameworks */,
+				B68787751ECA4A33001707B1 /* RxRealm.framework in Frameworks */,
 				B687873E1ECA2FA8001707B1 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +162,9 @@
 		B68787321ECA2F76001707B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B68787741ECA4A33001707B1 /* RxRealm.framework */,
+				B68787671ECA3E70001707B1 /* RealmSwift.framework */,
+				B68787651ECA3E6B001707B1 /* Realm.framework */,
 				B687873D1ECA2FA8001707B1 /* Unbox.framework */,
 				B687873B1ECA2FA0001707B1 /* NSObject_Rx.framework */,
 				B68787391ECA2F94001707B1 /* Action.framework */,
@@ -325,7 +337,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B687872E1ECA2EC5001707B1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -335,6 +347,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 			);
 			outputPaths = (
 			);
