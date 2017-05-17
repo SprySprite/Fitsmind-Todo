@@ -37,6 +37,12 @@ extension Scene {
       var vc = nc.viewControllers.first as! EditTaskViewController
       vc.bindViewModel(to: viewModel)
       return nc
+      
+    case .mainScreen(let viewModel):
+      let nc = storyboard.instantiateViewController(withIdentifier: "MainScreen") as! UINavigationController
+      var vc = nc.viewControllers.first as! TabViewController
+      vc.bindViewModel(to: viewModel)
+      return nc
     }
   }
 }

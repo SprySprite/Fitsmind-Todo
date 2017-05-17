@@ -31,7 +31,8 @@ class TasksViewController: UIViewController, BindableType {
   @IBOutlet var tableView: UITableView!
   @IBOutlet var statisticsLabel: UILabel!
   @IBOutlet var newTaskButton: UIBarButtonItem!
-  
+  @IBOutlet var backButton: UIBarButtonItem!
+
   var viewModel: TasksViewModel!
   let dataSource = RxTableViewSectionedAnimatedDataSource<TaskSection>()
   
@@ -50,6 +51,7 @@ class TasksViewController: UIViewController, BindableType {
       .addDisposableTo(self.rx_disposeBag)
     
     newTaskButton.rx.action = viewModel.onCreateTask()
+    backButton.rx.action = viewModel.backAction()
     
     tableView.rx.itemSelected
       .map { [unowned self] indexPath in

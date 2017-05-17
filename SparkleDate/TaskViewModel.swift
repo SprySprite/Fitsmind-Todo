@@ -86,6 +86,12 @@ struct TasksViewModel {
     }
   }
   
+  func backAction() -> CocoaAction {
+    return CocoaAction { _ in
+      return self.sceneCoordinator.pop()
+    }
+  }
+  
   lazy var editAction: Action<TaskItem, Void> = { this in
     return Action { task in
       let editViewModel = EditTaskViewModel(

@@ -27,11 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    
     let service = TaskService()
     let sceneCoordinator = SceneCoordinator(window: window!)
     
-    let tasksViewModel = TasksViewModel(taskService: service, coordinator: sceneCoordinator)
-    let firstScene = Scene.tasks(tasksViewModel)
+    //let tasksViewModel = TasksViewModel(taskService: service, coordinator: sceneCoordinator)
+    //let firstScene = Scene.tasks(tasksViewModel)
+    let tabViewModel = TabViewModel(taskService: service, coordinator: sceneCoordinator)
+    let firstScene = Scene.mainScreen(tabViewModel)
+    
     sceneCoordinator.transition(to: firstScene, type: .root)
     
     return true
