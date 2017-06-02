@@ -27,12 +27,15 @@ import Action
 struct EditTaskViewModel {
   
   let itemTitle: String
-  let onUpdate: Action<String, Void>
+  let itemPriority: Int
+  let onUpdate: Action<(String,String), Void>
   let onCancel: CocoaAction!
   let disposeBag = DisposeBag()
   
-  init(task: TaskItem, coordinator: SceneCoordinatorType, updateAction: Action<String, Void>, cancelAction: CocoaAction? = nil) {
+  init(task: TaskItem, coordinator: SceneCoordinatorType, updateAction: Action<(String,String), Void>, cancelAction: CocoaAction? = nil) {
     itemTitle = task.title
+    itemPriority = task.priority
+  
     onUpdate = updateAction
     onCancel = CocoaAction {
       if let cancelAction = cancelAction {

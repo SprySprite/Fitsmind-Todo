@@ -30,6 +30,7 @@ typealias TaskSection = AnimatableSectionModel<String, TaskItem>
 struct TasksViewModel {
   let sceneCoordinator: SceneCoordinatorType
   let taskService: TaskServiceType
+  var sortByScope = "title"
   
   init(taskService: TaskServiceType, coordinator: SceneCoordinatorType) {
     self.taskService = taskService
@@ -47,10 +48,28 @@ struct TasksViewModel {
       return self.taskService.delete(task: task)
     }
   }
-  
-  func onUpdateTitle(task: TaskItem) -> Action<String, Void> {
+
+  func onUpdateTitle(task: TaskItem) -> Action<(String,String), Void> {
     return Action { newTitle in
-      return self.taskService.update(task: task, title: newTitle).map { _ in }
+      return self.taskService.updateTask(task: task, title: newTitle.0, priority: newTitle.1).map { _ in }
+    }
+  }
+  
+  func taskQuery(title: String) -> Observable<[TaskSection]>{
+    return self.taskService.tasksFilter(title: title)
+      .map { results in
+        let dueTasks = results
+          .filter("checked == nil")
+          .sorted(byKeyPath: self.sortByScope, ascending: true)
+        
+        let doneTasks = results
+          .filter("checked != nil")
+          .sorted(byKeyPath: self.sortByScope, ascending: true)
+
+        return [
+          TaskSection(model: "Due Tasks", items: dueTasks.toArray()),
+          TaskSection(model: "Done Tasks", items: doneTasks.toArray())
+        ]
     }
   }
   
@@ -59,11 +78,11 @@ struct TasksViewModel {
       .map { results in
         let dueTasks = results
           .filter("checked == nil")
-          .sorted(byKeyPath: "added", ascending: false)
+          .sorted(byKeyPath: self.sortByScope, ascending: true)
         
         let doneTasks = results
           .filter("checked != nil")
-          .sorted(byKeyPath: "checked", ascending: false)
+          .sorted(byKeyPath: self.sortByScope, ascending: true)
         
         return [
           TaskSection(model: "Due Tasks", items: dueTasks.toArray()),
@@ -86,12 +105,6 @@ struct TasksViewModel {
     }
   }
   
-  func backAction() -> CocoaAction {
-    return CocoaAction { _ in
-      return self.sceneCoordinator.pop()
-    }
-  }
-  
   lazy var editAction: Action<TaskItem, Void> = { this in
     return Action { task in
       let editViewModel = EditTaskViewModel(
@@ -102,5 +115,13 @@ struct TasksViewModel {
       return this.sceneCoordinator.transition(to: Scene.editTask(editViewModel), type: .modal)
     }
   }(self)
+  
+  lazy var deleteAction: Action<TaskItem, Void> = { (service: TaskServiceType) in
+    return Action { item in
+      return service.delete(task: item)
+    }
+  }(self.taskService)
+  
+  
 }
 

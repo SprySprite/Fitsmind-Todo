@@ -32,11 +32,11 @@ struct TaskService: TaskServiceType {
     do {
       let realm = try Realm()
       if realm.objects(TaskItem.self).count == 0 {
-        ["Chapter 5: Filtering operators",
-         "Chapter 4: Observables and Subjects in practice",
-         "Chapter 3: Subjects",
-         "Chapter 2: Observables",
-         "Chapter 1: Hello, RxSwift"].forEach {
+        ["ToDo 5: Realm Query",
+         "ToDo 4: Sort by Priority",
+         "ToDo 3: Sort by Date",
+         "ToDo 2: Search by Title",
+         "ToDo 1: Add Priority"].forEach {
           self.createTask(title: $0)
         }
       }
@@ -47,6 +47,8 @@ struct TaskService: TaskServiceType {
   fileprivate func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
     do {
       let realm = try Realm()
+      //print(Realm.Configuration.defaultConfiguration.fileURL!)
+      
       return try action(realm)
     } catch let err {
       print("Failed \(operation) realm with error: \(err)")
@@ -91,6 +93,23 @@ struct TaskService: TaskServiceType {
   }
   
   @discardableResult
+  func updateTask(task: TaskItem, title: String, priority: String) -> Observable<TaskItem> {
+    let result = withRealm("updating title") { realm -> Observable<TaskItem> in
+      try realm.write {
+        task.title = title
+        if let intPriority = Int(priority) {
+          task.priority = intPriority
+        }
+        else {
+          task.priority = 1
+        }
+      }
+      return .just(task)
+    }
+    return result ?? .error(TaskServiceError.updateFailed(task))
+  }
+  
+  @discardableResult
   func toggle(task: TaskItem) -> Observable<TaskItem> {
     let result = withRealm("toggling") { realm -> Observable<TaskItem> in
       try realm.write {
@@ -109,6 +128,15 @@ struct TaskService: TaskServiceType {
     let result = withRealm("getting tasks") { realm -> Observable<Results<TaskItem>> in
       let realm = try Realm()
       let tasks = realm.objects(TaskItem.self)
+      return Observable.collection(from: tasks)
+    }
+    return result ?? .empty()
+  }
+  
+  func tasksFilter(title: String) -> Observable<Results<TaskItem>> {
+    let result = withRealm("getting tasks") { realm -> Observable<Results<TaskItem>> in
+      let realm = try Realm()
+      let tasks = realm.objects(TaskItem.self).filter("title contains '\(title)'")
       return Observable.collection(from: tasks)
     }
     return result ?? .empty()

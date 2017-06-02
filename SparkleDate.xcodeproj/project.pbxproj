@@ -37,8 +37,6 @@
 		B68787721ECA4930001707B1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787331ECA2F77001707B1 /* RxSwift.framework */; };
 		B68787731ECA4939001707B1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787351ECA2F7C001707B1 /* RxCocoa.framework */; };
 		B68787751ECA4A33001707B1 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68787741ECA4A33001707B1 /* RxRealm.framework */; };
-		B68787771ECBB6F6001707B1 /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787761ECBB6F6001707B1 /* TabViewModel.swift */; };
-		B68787791ECBB70E001707B1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68787781ECBB70E001707B1 /* TabViewController.swift */; };
 		B687877B1ECBD243001707B1 /* UITabBarItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687877A1ECBD243001707B1 /* UITabBarItem+Rx.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +85,6 @@
 		B68787651ECA3E6B001707B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B68787671ECA3E70001707B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B68787741ECA4A33001707B1 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
-		B68787761ECBB6F6001707B1 /* TabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
-		B68787781ECBB70E001707B1 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		B687877A1ECBD243001707B1 /* UITabBarItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,8 +194,6 @@
 				B68787511ECA3492001707B1 /* TaskViewController.swift */,
 				B68787531ECA34AA001707B1 /* EditTaskViewModel.swift */,
 				B68787551ECA34BB001707B1 /* EditTaskViewController.swift */,
-				B68787761ECBB6F6001707B1 /* TabViewModel.swift */,
-				B68787781ECBB70E001707B1 /* TabViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -390,9 +384,7 @@
 				B687870F1EC90306001707B1 /* AppDelegate.swift in Sources */,
 				B687875E1ECA3644001707B1 /* UINavigationController+Rx.swift in Sources */,
 				B68787461ECA330C001707B1 /* Scene.swift in Sources */,
-				B68787771ECBB6F6001707B1 /* TabViewModel.swift in Sources */,
 				B68787521ECA3492001707B1 /* TaskViewController.swift in Sources */,
-				B68787791ECBB70E001707B1 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

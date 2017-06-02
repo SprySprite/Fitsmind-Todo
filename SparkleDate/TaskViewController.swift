@@ -31,8 +31,8 @@ class TasksViewController: UIViewController, BindableType {
   @IBOutlet var tableView: UITableView!
   @IBOutlet var statisticsLabel: UILabel!
   @IBOutlet var newTaskButton: UIBarButtonItem!
-  @IBOutlet var backButton: UIBarButtonItem!
-
+  @IBOutlet var searchBar: UISearchBar!
+  
   var viewModel: TasksViewModel!
   let dataSource = RxTableViewSectionedAnimatedDataSource<TaskSection>()
   
@@ -41,7 +41,8 @@ class TasksViewController: UIViewController, BindableType {
     
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 60
-    
+    setEditing(true, animated: false)
+  
     configureDataSource()
   }
   
@@ -51,7 +52,6 @@ class TasksViewController: UIViewController, BindableType {
       .addDisposableTo(self.rx_disposeBag)
     
     newTaskButton.rx.action = viewModel.onCreateTask()
-    backButton.rx.action = viewModel.backAction()
     
     tableView.rx.itemSelected
       .map { [unowned self] indexPath in
@@ -59,6 +59,38 @@ class TasksViewController: UIViewController, BindableType {
       }
       .subscribe(viewModel.editAction.inputs)
       .addDisposableTo(rx_disposeBag)
+
+    tableView.rx.itemDeleted
+      .map { [unowned self] indexPath in
+        try! self.tableView.rx.model(at: indexPath)
+      }
+      .subscribe(viewModel.deleteAction.inputs)
+      .addDisposableTo(rx_disposeBag)
+    
+      searchBar
+        .rx.text
+        .orEmpty
+        .debounce(0.3, scheduler: MainScheduler.instance) // Wait 0.5 for changes.
+        .distinctUntilChanged() // If they didn't occur, check if the new value is the same as old.
+        //.filter { !$0.isEmpty }
+        .subscribe(onNext: { [unowned self] query in
+          print(self.searchBar.scopeButtonTitles![self.searchBar.selectedScopeButtonIndex])
+          self.viewModel.taskQuery(title: query)
+          .bind(to: self.tableView.rx.items(dataSource: self.dataSource))
+          .addDisposableTo(self.rx_disposeBag)
+        })
+        .addDisposableTo(rx_disposeBag)
+    
+      searchBar
+        .rx.selectedScopeButtonIndex
+        .subscribe(onNext: { [unowned self] query in
+          self.viewModel.sortByScope = self.searchBar.scopeButtonTitles![self.searchBar.selectedScopeButtonIndex]
+          self.viewModel.taskQuery(title: self.searchBar.text!)
+            .bind(to: self.tableView.rx.items(dataSource: self.dataSource))
+            .addDisposableTo(self.rx_disposeBag)
+        })
+        .addDisposableTo(rx_disposeBag)
+  
   }
   
   fileprivate func configureDataSource() {
@@ -72,8 +104,11 @@ class TasksViewController: UIViewController, BindableType {
       if let strongSelf = self {
         cell.configure(with: item, action: strongSelf.viewModel.onToggle(task: item))
       }
+      
       return cell
     }
+    
+    dataSource.canEditRowAtIndexPath = { _ in true}
   }
   
 }

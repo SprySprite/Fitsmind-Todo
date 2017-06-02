@@ -31,16 +31,22 @@ class EditTaskViewController: UIViewController, BindableType {
   @IBOutlet var titleView: UITextView!
   @IBOutlet var okButton: UIBarButtonItem!
   @IBOutlet var cancelButton: UIBarButtonItem!
+  @IBOutlet var priorityField: UITextField!
   
   var viewModel: EditTaskViewModel!
   
   func bindViewModel() {
     titleView.text = viewModel.itemTitle
+    priorityField.text = viewModel.itemPriority.description
     
     cancelButton.rx.action = viewModel.onCancel
     
+    let taskObservable =
+      Observable.combineLatest(titleView.rx.text.orEmpty, priorityField.rx.text.orEmpty) {
+        ($0, $1) }
+    
     okButton.rx.tap
-      .withLatestFrom(titleView.rx.text.orEmpty)
+      .withLatestFrom(taskObservable)
       .subscribe(viewModel.onUpdate.inputs)
       .addDisposableTo(rx_disposeBag)
   }
@@ -49,5 +55,6 @@ class EditTaskViewController: UIViewController, BindableType {
     super.viewDidAppear(animated)
     titleView.becomeFirstResponder()
   }
+  
   
 }

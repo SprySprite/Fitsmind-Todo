@@ -28,6 +28,8 @@ class TaskItemTableViewCell: UITableViewCell {
   
   @IBOutlet var title: UILabel!
   @IBOutlet var button: UIButton!
+  @IBOutlet var priorityLabel: UILabel!
+  
   var disposeBag = DisposeBag()
   
   func configure(with item: TaskItem, action: CocoaAction) {
@@ -36,6 +38,12 @@ class TaskItemTableViewCell: UITableViewCell {
     item.rx.observe(String.self, "title")
       .subscribe(onNext: { [weak self] title in
         self?.title.text = title
+      })
+      .addDisposableTo(disposeBag)
+    
+    item.rx.observe(Int.self, "priority")
+      .subscribe(onNext: { [weak self] priority in
+        self?.priorityLabel.text = String(describing: priority!)
       })
       .addDisposableTo(disposeBag)
     

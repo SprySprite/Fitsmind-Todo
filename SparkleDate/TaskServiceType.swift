@@ -42,8 +42,13 @@ protocol TaskServiceType {
   func update(task: TaskItem, title: String) -> Observable<TaskItem>
   
   @discardableResult
+  func updateTask(task: TaskItem, title: String, priority: String) -> Observable<TaskItem>
+  
+  @discardableResult
   func toggle(task: TaskItem) -> Observable<TaskItem>
   
   func tasks() -> Observable<Results<TaskItem>>
+  
+  func tasksFilter(title: String) -> Observable<Results<TaskItem>>
 }
 

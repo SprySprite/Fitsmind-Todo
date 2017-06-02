@@ -31,6 +31,8 @@ class TaskItem: Object {
   dynamic var added: Date = Date()
   dynamic var checked: Date? = nil
   
+  dynamic var priority: Int = 1
+  
   override class func primaryKey() -> String? {
     return "uid"
   }
